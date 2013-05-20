@@ -36,18 +36,18 @@ class ExtensionsExample1 {
 		val initialValue=new Object()
 		//trying to assign a different value will fail
 		//use var instead of val for non-final variables
-		//initialValue=new Object()
+//		initialValue=new Object()
 
 		val basics=new DummyClass(initialValue)
 
-		assertEquals(initialValue, basics.getTheObject())
+		assertSame(initialValue, basics.getTheObject())
 		//empty parentheses can be omitted
-		assertEquals(initialValue, basics.getTheObject)
+		assertSame(initialValue, basics.getTheObject)
 		//prefix get can be omitted for getters
-		assertEquals(initialValue, basics.theObject)
+		assertSame(initialValue, basics.theObject)
 
 		//println extension returns the parameter object
-		assertEquals(initialValue, println(basics.theObject))
+		assertSame(initialValue, println(basics.theObject))
 
 
 		basics.setTheObject("new")

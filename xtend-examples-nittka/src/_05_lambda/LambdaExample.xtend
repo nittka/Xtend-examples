@@ -13,7 +13,10 @@ class LambdaExample{
 	def void doSomething(Object o){}
 
 	def void illustrateEquivalentNotations(){
-		//verbose variant
+		//verbose variants
+		for(Object o:exampleObjects){
+			doSomething(o)
+		}
 		IterableExtensions::forEach(exampleObjects,[Object o|doSomething(o)])
 
 		//use forEach as extension method
