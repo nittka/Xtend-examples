@@ -52,14 +52,14 @@ class LambdaExample{
 		assertEquals(3,exampleObjects.filter(typeof(Number)).toList.get(0))
 		assertFalse((1..10).exists[it>10])
 		assertTrue((1..10).forall[it<11])
-		assertEquals(6, (1..10).findFirst[it>5])
-		assertEquals(4, (1..10).findLast[it<5])
-		assertEquals(30,(1..10).filter[it%2==0].reduce[i1,i2|i1+i2])
+		assertEquals(6, (1..10).findFirst[it>5].intValue)
+		assertEquals(4, (1..10).findLast[it<5].intValue)
+		assertEquals(30,(1..10).filter[it%2==0].reduce[i1,i2|i1+i2].intValue)
 
 
 		//just for completeness
-		assertEquals(1,(1..10).head)
-		assertEquals(10,(1..10).last)
+		assertEquals(1,(1..10).head.intValue)
+		assertEquals(10,(1..10).last.intValue)
 		assertEquals("2, 3, 4, 5",(1..5).tail.join(', '))
 		assertEquals("1, 2, 3, 4, 5",(1..10).take(5).join(', '))
 		assertEquals("6, 7, 8, 9, 10",(1..10).drop(5).join(', '))
